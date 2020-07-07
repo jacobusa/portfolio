@@ -1,7 +1,7 @@
-$primary-color: #333;
-$secondary-color: #eece1a;
+$primary-color: #444;
+$secondary-color: #dc143c;
 $show-home-image: true;
-$home-image: url("../img/background.jpg");
+$home-image: url("../img/background1.jpg");
 $background-opacity: 0.7;
 
 @mixin easeOut {
@@ -12,7 +12,7 @@ $background-opacity: 0.7;
     &#bg-img {
       background: $home-image;
       background-attachment: fixed;
-      background-size: cover;
+      background-size: 100% 100%;
 
       &:after {
         content: "";
@@ -25,6 +25,14 @@ $background-opacity: 0.7;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
