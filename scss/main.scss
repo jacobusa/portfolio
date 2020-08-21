@@ -14,18 +14,43 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
-
+main#contact,
+main#about,
+main#work {
+  background: linear-gradient(
+      to bottom right,
+      rgba(68, 68, 68, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../img/wood.jpg");
+  // background-image: url("../img/wood.jpg");
+  background-size: cover;
+  z-index: -1;
+  background-attachment: fixed;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    // background: rgba($primary-color, $background-opacity);
+  }
+}
 // Headings
 h1,
 h2,
 h3 {
   margin: 0;
   font-weight: 400;
+  border-radius: 3em;
 
   &.lg-heading {
     font-size: 6rem;
   }
   &.sm-heading {
+    width: fit-content;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
@@ -53,6 +78,7 @@ main {
 
   .icons {
     margin-top: 1rem;
+    margin-left: 15rem;
 
     a {
       padding: 0.4rem;
@@ -73,24 +99,30 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
+  margin-top: 5em;
+  grid-gap: 35px;
+  // grid-template-areas:
+  //   "bio-image bio bio"
+  //   "job-1 job-2 job-3";
   grid-template-areas:
-    "bio-image bio bio"
-    "job-1 job-2 job-3";
+    "bio-image bio job-1"
+    "bio-image job-2 job-3";
   grid-template-columns: repeat(3, 1fr);
 
   .bio-image {
     grid-area: bio-image;
-    background-size: contain;
-    border-radius: 50%;
+    background-size: cover;
+    // border-radius: 50%;
+    border-radius: 20%;
     border: solid 3px $secondary-color;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 80%;
+    // margin-right: 15%;
     margin: auto;
   }
   .bio {
     grid-area: bio;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   .job-1 {
     grid-area: job-1;
@@ -104,7 +136,8 @@ main {
   .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    border-left: $secondary-color 5px solid;
+    border-top: $secondary-color 5px solid;
   }
 }
 
@@ -112,37 +145,77 @@ main {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem;
+  grid-gap: 2rem;
+  position: relative;
+
+  h4:hover {
+    @include easeOut;
+    color: rgba(lighten($secondary-color, 2), 0.8);
+  }
+  p:hover {
+    @include easeOut;
+    color: rgba(lighten($secondary-color, 2), 0.8);
+  }
   img {
+    // position: relative;
     width: 100%;
+    height: 200px;
     border: 3px #fff solid;
+    position: relative;
 
     &:hover {
-      opacity: 0.5;
+      opacity: 0.7;
+      // width: 110%;
+      // height: 250px;
+      // margin-right: 10rem;
       border-color: $secondary-color;
       @include easeOut;
     }
   }
+  h4 {
+    text-align: center;
+    color: white;
+    // background: rgba(lighten($primary-color, 2), 0.5);
+  }
+  p {
+    text-align: center;
+    color: white;
+    // background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+img:hover:after {
+  visibility: visible;
 }
 
 // Contact Page
+
+section.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .boxes {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 1rem;
 
   div {
     font-size: 2rem;
     border: 3px #fff solid;
+    height: 6rem;
+    width: 35rem;
+    text-align: center;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
 
     @include easeOut;
 
     &:hover {
-      padding: 0.5rem 1.5rem;
+      padding: 1rem 1.5rem;
       background: $secondary-color;
       color: set-text-color($secondary-color);
       span {
@@ -150,6 +223,20 @@ main {
         @include easeOut;
       }
     }
+  }
+}
+.canada {
+  background-image: url("../img/transparent-leaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: auto;
+  margin-left: auto;
+  height: 300px;
+  width: 300px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+    @include easeOut;
   }
 }
 

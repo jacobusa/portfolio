@@ -53,10 +53,11 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
-      background: url("../img/portrait.jpg");
-      background-size: 250px 250px;
+      width: 300px;
+      height: 300px;
+      background: url("../img/lovetechphoto.jpg");
+      background-repeat: no-repeat;
+      background-size: 300px 300px;
       border-radius: 50%;
       border: solid 3px #dc143c; }
   .menu .nav-item {
@@ -102,9 +103,9 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url("../img/background1.jpg");
+    background: url("../img/wood-background-computer.jpg");
     background-attachment: fixed;
-    background-size: 100% 100%; }
+    background-size: cover; }
     body#bg-img:after {
       content: "";
       position: absolute;
@@ -113,13 +114,32 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(68, 68, 68, 0.7); }
+      background: rgba(68, 68, 68, 0.4); }
+
+main#contact,
+main#about,
+main#work {
+  background: linear-gradient(to bottom right, rgba(68, 68, 68, 0.5), rgba(0, 0, 0, 0.7)), url("../img/wood.jpg");
+  background-size: cover;
+  z-index: -1;
+  background-attachment: fixed; }
+  main#contact:after,
+  main#about:after,
+  main#work:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1; }
 
 h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400; }
+  font-weight: 400;
+  border-radius: 3em; }
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
@@ -127,6 +147,7 @@ h3 {
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
+    width: fit-content;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(73, 73, 73, 0.5); }
@@ -147,7 +168,8 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
-    margin-top: 1rem; }
+    margin-top: 1rem;
+    margin-left: 15rem; }
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
@@ -160,20 +182,21 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "bio-image bio bio" "job-1 job-2 job-3";
+  margin-top: 5em;
+  grid-gap: 35px;
+  grid-template-areas: "bio-image bio job-1" "bio-image job-2 job-3";
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bio-image;
-    background-size: contain;
-    border-radius: 50%;
+    background-size: cover;
+    border-radius: 20%;
     border: solid 3px #dc143c;
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 80%;
     margin: auto; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.1rem; }
   .about-info .job-1 {
     grid-area: job-1; }
   .about-info .job-2 {
@@ -183,39 +206,81 @@ main {
   .about-info .job {
     background: #515151;
     padding: 0.5rem;
-    border-bottom: #dc143c 5px solid; }
+    border-left: #dc143c 5px solid;
+    border-top: #dc143c 5px solid; }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem; }
+  grid-gap: 2rem;
+  position: relative; }
+  .projects h4:hover {
+    transition: all 0.8s ease-out;
+    color: rgba(229, 21, 63, 0.8); }
+  .projects p:hover {
+    transition: all 0.8s ease-out;
+    color: rgba(229, 21, 63, 0.8); }
   .projects img {
     width: 100%;
-    border: 3px #fff solid; }
+    height: 200px;
+    border: 3px #fff solid;
+    position: relative; }
     .projects img:hover {
-      opacity: 0.5;
+      opacity: 0.7;
       border-color: #dc143c;
       transition: all 0.8s ease-out; }
+  .projects h4 {
+    text-align: center;
+    color: white; }
+  .projects p {
+    text-align: center;
+    color: white; }
+
+img:hover:after {
+  visibility: visible; }
+
+section.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .boxes {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 1rem; }
   .boxes div {
     font-size: 2rem;
     border: 3px #fff solid;
+    height: 6rem;
+    width: 35rem;
+    text-align: center;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.8s ease-out; }
     .boxes div:hover {
-      padding: 0.5rem 1.5rem;
+      padding: 1rem 1.5rem;
       background: #dc143c;
       color: #000; }
       .boxes div:hover span {
         color: #000;
         transition: all 0.8s ease-out; }
+
+.canada {
+  background-image: url("../img/transparent-leaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: auto;
+  margin-left: auto;
+  height: 300px;
+  width: 300px;
+  opacity: 0.5; }
+  .canada:hover {
+    opacity: 1;
+    transition: all 0.8s ease-out; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -244,10 +309,6 @@ main {
   color: #fff;
   height: 60px; }
 
-@media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr); } }
-
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
@@ -274,17 +335,22 @@ main {
     transform: translate3d(-100%, 0, 0);
     font-size: 24px; }
   .menu-branding {
-    height: 25vh;
+    height: 30vh;
     transform: translate3d(100%, 0, 0);
     transition: all 0.8s ease-out; }
     .menu-branding .portrait {
-      background: url("../img/portrait.jpg");
-      background-size: contain;
-      width: 150px;
-      height: 150px; }
+      background: url("../img/lovetechphoto.jpg");
+      background-size: cover;
+      width: 200px;
+      height: 200px; }
   .about-info {
     grid-template-areas: "bio-image" "bio" "job-1" "job-2" "job-3";
     grid-template-columns: 1fr; }
+    .about-info .bio-image {
+      grid-area: bio-image;
+      background-size: cover;
+      width: 250px;
+      height: 400px; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
