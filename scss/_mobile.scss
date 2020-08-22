@@ -67,7 +67,7 @@
     @include easeOut;
 
     .portrait {
-      background: url("../img/lovetechphoto.jpg");
+      background: url("../img/lovetechphoto.png");
       background-size: cover;
       width: 200px;
       height: 200px;
@@ -99,7 +99,7 @@
   }
   .boxes div {
     width: 80vw;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem 1rem 1rem 1rem;
     line-height: 2;
   }

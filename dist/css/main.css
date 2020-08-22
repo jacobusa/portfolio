@@ -55,7 +55,7 @@
     .menu-branding .portrait {
       width: 300px;
       height: 300px;
-      background: url("../img/lovetechphoto.jpg");
+      background: url("../img/lovetechphoto.png");
       background-repeat: no-repeat;
       background-size: 300px 300px;
       border-radius: 50%;
@@ -360,7 +360,7 @@ section.contact {
     transform: translate3d(100%, 0, 0);
     transition: all 0.8s ease-out; }
     .menu-branding .portrait {
-      background: url("../img/lovetechphoto.jpg");
+      background: url("../img/lovetechphoto.png");
       background-size: cover;
       width: 200px;
       height: 200px; }
@@ -376,7 +376,7 @@ section.contact {
     grid-template-columns: repeat(2, 1fr); }
   .boxes div {
     width: 80vw;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem 1rem 1rem 1rem;
     line-height: 2; } }
 
