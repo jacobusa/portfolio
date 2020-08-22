@@ -183,7 +183,8 @@ main {
 .about-info {
   display: grid;
   margin-top: 5em;
-  grid-gap: 35px;
+  column-gap: 75px;
+  row-gap: 15px;
   grid-template-areas: "bio-image bio job-1" "bio-image job-2 job-3";
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
@@ -191,12 +192,18 @@ main {
     background-size: cover;
     border-radius: 20%;
     border: solid 3px #dc143c;
-    width: 100%;
-    height: 80%;
+    width: 110%;
+    height: 100%;
     margin: auto; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.1rem; }
+    .about-info .bio h3 {
+      border-radius: 10%;
+      font-weight: 550;
+      text-decoration: underline #919191;
+      padding: 0.4rem 0.5rem;
+      width: fit-content; }
   .about-info .job-1 {
     grid-area: job-1; }
   .about-info .job-2 {
@@ -205,7 +212,9 @@ main {
     grid-area: job-3; }
   .about-info .job {
     background: #515151;
+    line-height: 1.2em;
     padding: 0.5rem;
+    border-radius: 7%;
     border-left: #dc143c 5px solid;
     border-top: #dc143c 5px solid; }
 
@@ -311,14 +320,26 @@ section.contact {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .about-info {
+    grid-template-areas: "bio-image bio" "bio-image job-1" "job-2 job-3";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; }
+    .about-info .bio-image {
+      width: 80%;
+      height: 100%; } }
 
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     text-align: center; }
+    main .icons {
+      text-align: center;
+      margin: auto;
+      margin-top: 4rem; }
     main .lg-heading {
       line-height: 1;
+      font-size: 4rem;
       margin-bottom: 1rem; }
   .menu {
     display: block; }
@@ -331,11 +352,11 @@ section.contact {
     div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
-    height: 75vh;
+    height: 65vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px; }
   .menu-branding {
-    height: 30vh;
+    height: 35vh;
     transform: translate3d(100%, 0, 0);
     transition: all 0.8s ease-out; }
     .menu-branding .portrait {
@@ -352,7 +373,12 @@ section.contact {
       width: 250px;
       height: 400px; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .boxes div {
+    width: 80vw;
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1rem 1rem;
+    line-height: 2; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -361,6 +387,6 @@ section.contact {
       margin-top: 10vh; }
     main .lg-heading {
       margin-top: 1rem;
-      font-size: 5rem; }
+      font-size: 4rem; }
   .projects {
     grid-template-columns: 1fr; } }

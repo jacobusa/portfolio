@@ -10,6 +10,19 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+  .about-info {
+    grid-template-areas:
+      "bio-image bio"
+      "bio-image job-1"
+      "job-2 job-3";
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .bio-image {
+      width: 80%;
+      height: 100%;
+    }
+  }
 }
 
 // Tablets & Small Laptops
@@ -17,9 +30,15 @@
   main {
     align-items: center;
     text-align: center;
+    .icons {
+      text-align: center;
+      margin: auto;
+      margin-top: 4rem;
+    }
 
     .lg-heading {
       line-height: 1;
+      font-size: 4rem;
       margin-bottom: 1rem;
     }
   }
@@ -38,12 +57,12 @@
   }
 
   .menu-nav {
-    height: 75vh;
+    height: 65vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
   .menu-branding {
-    height: 30vh;
+    height: 35vh;
     transform: translate3d(100%, 0, 0);
     @include easeOut;
 
@@ -78,6 +97,12 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  .boxes div {
+    width: 80vw;
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1rem 1rem;
+    line-height: 2;
+  }
 }
 
 // Smartphones
@@ -90,7 +115,7 @@
 
     .lg-heading {
       margin-top: 1rem;
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
   .projects {
